@@ -314,7 +314,7 @@ class ConferenceConnector {
             if (track) {
                 APP.store.dispatch(trackOwnerChanged(track, owner));
             } else {
-                console.error(`track not found. ssrc:${ssrc} owner:${owner}.`);
+                logger.error(`track not found. ssrc:${ssrc} owner:${owner}.`);
             }
         });
     }
