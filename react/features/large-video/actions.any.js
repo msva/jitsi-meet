@@ -2,7 +2,10 @@
 
 import type { Dispatch } from 'redux';
 
-import { getMultipleVideoSupportFeatureFlag } from '../base/config';
+import {
+    getMultipleVideoSupportFeatureFlag,
+    getSsrcRewritingFeatureFlag
+} from '../base/config';
 import { MEDIA_TYPE } from '../base/media';
 import {
     getDominantSpeakerParticipant,
@@ -177,11 +180,14 @@ function _electParticipantInLargeVideo(state) {
     participant = undefined;
 
     // Next, pick the most recent participant with video.
-    const tracks = state['features/base/tracks'];
-    const videoTrack = _electLastVisibleRemoteVideo(tracks);
+    // (Skip this if rewriting, tracks may be detached from any owner.)
+    if(!getSsrcRewritingFeatureFlag(state)) {
+        const tracks = state['features/base/tracks'];
+        const videoTrack = _electLastVisibleRemoteVideo(tracks);
 
-    if (videoTrack) {
-        return videoTrack.participantId;
+        if (videoTrack) {
+            return videoTrack.participantId;
+        }
     }
 
     // Last, select the participant that joined last (other than poltergist or other bot type participants).
