@@ -1,8 +1,8 @@
-import { MediaType } from '../media/constants';
+import { MediaType, VIDEO_TYPE } from '../media/constants';
 import {
     PARTICIPANT_ID_CHANGED,
     PARTICIPANT_LEFT
- } from '../participants/actionTypes';
+} from '../participants/actionTypes';
 import ReducerRegistry from '../redux/ReducerRegistry';
 import { set } from '../redux/functions';
 
@@ -18,7 +18,6 @@ import {
     TRACK_UPDATE_LAST_VIDEO_MEDIA_EVENT,
     TRACK_WILL_CREATE
 } from './actionTypes';
-import { VIDEO_TYPE } from '../media/constants';
 
 export interface ITrack {
     isReceivingData: boolean;
@@ -101,7 +100,7 @@ function track(state: ITrack, action: any) {
     case TRACK_OWNER_CHANGED: {
         const t = action.track;
 
-        if (state.jitsiTrack === t.jitsiTrack.jitsiTrack) {
+        if (state.jitsiTrack === t.jitsiTrack) {
             return {
                 ...state,
                 participantId: t.participantId,
