@@ -380,7 +380,7 @@ export function trackAdded(track: any) {
             (type: VideoType) => dispatch(trackVideoTypeChanged(track, type)));
         track.on(
             JitsiTrackEvents.TRACK_OWNER_CHANGED,
-            owner => dispatch(trackOwnerChanged(track, owner)));
+            (owner: string) => dispatch(trackOwnerChanged(track, owner)));
         const local = track.isLocal();
         const isVirtualScreenshareParticipantCreated = local
             ? getMultipleVideoSendingSupportFeatureFlag(getState())
@@ -635,7 +635,13 @@ export function trackStreamingStatusChanged(track: any, streamingStatus: string)
  *     track: Track
  * }}
  */
-export function trackOwnerChanged(track, participantId) {
+export function trackOwnerChanged(track: any, participantId: string): {
+    track: {
+        jitsiTrack: any;
+        participantId: string;
+    };
+    type: 'TRACK_OWNER_CHANGED';
+} {
     return {
         type: TRACK_OWNER_CHANGED,
         track: {
