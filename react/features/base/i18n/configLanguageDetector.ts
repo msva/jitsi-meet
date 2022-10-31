@@ -1,6 +1,4 @@
 
-declare let config: any;
-
 /**
  * Custom language detection, just returns the config property if any.
  */
