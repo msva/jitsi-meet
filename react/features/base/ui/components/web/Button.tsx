@@ -75,7 +75,7 @@ const useStyles = makeStyles()((theme: Theme) => {
                 boxShadow: `0px 0px 0px 2px ${theme.palette.focus01}`
             },
 
-            '& div > svg': {
+            '& div > svg, & div > svg > path': {
                 fill: theme.palette.icon01
             }
         },
@@ -94,7 +94,7 @@ const useStyles = makeStyles()((theme: Theme) => {
                 backgroundColor: theme.palette.action02Active
             },
 
-            '& div > svg': {
+            '& div > svg, & div > svg > path': {
                 fill: theme.palette.icon04
             }
         },
@@ -137,7 +137,7 @@ const useStyles = makeStyles()((theme: Theme) => {
                 color: theme.palette.text03
             },
 
-            '& div > svg': {
+            '& div > svg, & div > svg > path': {
                 fill: theme.palette.icon03
             }
         },
@@ -211,7 +211,7 @@ const Button = React.forwardRef<any, any>(({
             title = { accessibilityLabel }
             type = { isSubmit ? 'submit' : 'button' }>
             {icon && <Icon
-                size = { 20 }
+                size = { 24 }
                 src = { icon } />}
             {(labelKey || label) && <span className = { icon ? styles.textWithIcon : '' }>
                 {labelKey ? t(labelKey) : label}

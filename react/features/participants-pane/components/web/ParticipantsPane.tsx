@@ -8,7 +8,7 @@ import { makeStyles } from 'tss-react/mui';
 import { IReduxState } from '../../../app/types';
 import participantsPaneTheme from '../../../base/components/themes/participantsPaneTheme.json';
 import { openDialog } from '../../../base/dialog/actions';
-import { IconClose, IconHorizontalPoints } from '../../../base/icons/svg';
+import { IconClose, IconDotsHorizontal } from '../../../base/icons/svg';
 import { isLocalParticipantModerator } from '../../../base/participants/functions';
 import Button from '../../../base/ui/components/web/Button';
 import ClickableIcon from '../../../base/ui/components/web/ClickableIcon';
@@ -174,7 +174,7 @@ const ParticipantsPane = () => {
                             <div className = { classes.footerMoreContainer }>
                                 <Button
                                     accessibilityLabel = { t('participantsPane.actions.moreModerationActions') }
-                                    icon = { IconHorizontalPoints }
+                                    icon = { IconDotsHorizontal }
                                     id = 'participants-pane-context-menu'
                                     onClick = { onToggleContext }
                                     type = { BUTTON_TYPES.SECONDARY } />

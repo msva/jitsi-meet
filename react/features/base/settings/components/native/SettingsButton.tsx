@@ -1,6 +1,6 @@
 /* eslint-disable lines-around-comment */
 import { translate } from '../../../../base/i18n/functions';
-import { IconSettings } from '../../../../base/icons/svg';
+import { IconGear } from '../../../../base/icons/svg';
 // @ts-ignore
 import { AbstractButton, type AbstractButtonProps } from '../../../../base/toolbox/components';
 // @ts-ignore
@@ -15,7 +15,7 @@ import { screen } from '../../../../mobile/navigation/routes';
  */
 class SettingsButton extends AbstractButton<AbstractButtonProps, any, any> {
     accessibilityLabel = 'toolbar.accessibilityLabel.Settings';
-    icon = IconSettings;
+    icon = IconGear;
     label = 'settings.buttonLabel';
 
     /**

@@ -52,7 +52,6 @@ const useStyles = makeStyles()(() => {
         nameContainer: {
             display: 'flex',
             overflow: 'hidden',
-            padding: '2px 0',
 
             '&>div': {
                 display: 'flex',

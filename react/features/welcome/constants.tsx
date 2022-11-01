@@ -1,7 +1,7 @@
 /* eslint-disable lines-around-comment */
 import React from 'react';
 
-import { IconEventNote, IconRestore, IconSettings } from '../base/icons/svg';
+import { IconEventNote, IconGear, IconRestore } from '../base/icons/svg';
 import BaseTheme from '../base/ui/components/BaseTheme';
 
 // @ts-ignore
@@ -41,6 +41,6 @@ export const settingsTabBarOptions = {
     tabBarIcon: ({ focused }: { focused: boolean; }) => (
         <TabIcon
             focused = { focused }
-            src = { IconSettings } />
+            src = { IconGear } />
     )
 };
