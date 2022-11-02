@@ -69,7 +69,7 @@ const useStyles = makeStyles()((theme: Theme) => {
             background: theme.palette.ui09,
             color: theme.palette.text04,
 
-            '& svg, & svg path': {
+            '& svg': {
                 fill: theme.palette.icon04
             }
         },

@@ -1,6 +1,5 @@
 /* eslint-disable lines-around-comment */
 import React, { useCallback } from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 // @ts-ignore
 import { Container } from '../../react/base';
@@ -108,18 +107,6 @@ type Props = {
 export const DEFAULT_COLOR = navigator.product === 'ReactNative' ? 'white' : undefined;
 export const DEFAULT_SIZE = navigator.product === 'ReactNative' ? 36 : 22;
 
-const getStyles = (iconColor = '#fff') => makeStyles()(() => {
-    return {
-        svg: {
-            fill: iconColor,
-
-            '& path': {
-                fill: iconColor
-            }
-        }
-    };
-});
-
 /**
  * Implements an Icon component that takes a loaded SVG file as prop and renders it as an icon.
  *
@@ -149,7 +136,6 @@ export default function Icon(props: Props) {
         onKeyDown,
         ...rest
     }: Props = props;
-    const { classes } = getStyles(color)();
 
     const {
         color: styleColor,
@@ -189,7 +175,6 @@ export default function Icon(props: Props) {
             style = { restStyle }
             tabIndex = { tabIndex }>
             <IconComponent
-                className = { color ? classes.svg : '' }
                 fill = { calculatedColor }
                 height = { calculatedSize }
                 id = { id }
