@@ -1,4 +1,4 @@
-import { IconPhone, IconShowWhiteboard } from '../icons/svg';
+import { IconPhone, IconWhiteboard } from '../icons/svg';
 
 /**
  * The relative path to the default/stock avatar (image) file used on both
@@ -79,4 +79,4 @@ export const LOWER_HAND_AUDIO_LEVEL = 0.2;
 /**
  * Icon URL for the whiteboard participant.
  */
-export const WHITEBOARD_PARTICIPANT_ICON = IconShowWhiteboard;
+export const WHITEBOARD_PARTICIPANT_ICON = IconWhiteboard;
